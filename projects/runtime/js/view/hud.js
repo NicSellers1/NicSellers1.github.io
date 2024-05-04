@@ -9,21 +9,21 @@
     
     /*
 
-    Create a heads-up display for our game showing a scoreand an 
-    "integrity meter" which indicates our health. The returned object is a 
+  //  Create a heads-up display for our game showing a scoreand an 
+  //  "integrity meter" which indicates our health. The returned object is a 
     create.js container which can be added to our game using the following code:
       
         var hud = opspark.makeHud();
         view.addChild(hud);
 
-    Once the hud has been created you can update by using the 
-    following junctions:
+  //  Once the hud has been created you can update by using the 
+   // following junctions:
 
-    hud.updateScore(score) - change the current score
-    hud.updateOf(maxScore) - change the display to indicate a maximum score
-    hud.setIntegrity(value) - update the integrity meter. value should be 
-                              between [0,100]
-    hud.kill() - special animation for the integrity meter when it reaches zero
+    hud.updateScore(score) //- change the current score
+    hud.updateOf(maxScore) //- change the display to indicate a maximum score
+    hud.setIntegrity(value) //- update the integrity meter. value should be 
+                              //between [0,100]
+    hud.kill() //- special animation for the integrity meter when it reaches zero
      */
     window.opspark.makeHud = function () {
         var hud, background, score, of, txtScore, integrity, integrityMeter;
