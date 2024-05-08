@@ -63,7 +63,7 @@ var background = function (window) {
               }
             }  
             
-            stars(50);
+            stars(100);
              
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
 

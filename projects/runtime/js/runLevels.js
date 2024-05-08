@@ -99,11 +99,80 @@ var runLevels = function (window) {
 
     createEnemy(1200, groundY - 50);
 
+    function createReward(x, y)
+    {
+
+      var reward = game.createGameItem("reward", 25);
+
+      var coin = draw.bitmap('img/reward.png');
+
+      coin.x = -25;
+      coin.y = -25;
+
+      reward.addChild(coin);
+
+      reward.x = x;
+      reward.y = y;
+
+      game.addGameItem(reward);
+
+      reward.velocityX = -1;
+
+      reward.onPlayerCollision = function()
+      {
+  
+        game.changeIntegrity(15);
+        game.increaseScore(300);
+        reward.shrink();
+  
+      }
+    }
+
+      createReward(450, groundY - 50);
+
+    function createMarker(x,y)
+    {
+
+      var end = game.createGameItem("end", 32);
+
+      var flag = draw.bitmap("img/flag.png");
+
+      flag.x = -32;
+      flag.y = -32;
+
+      end.addChild(flag);
+
+      end.x = x;
+      end.y = y;
+
+      game.addGameItem(end);
+
+      end.velocityX = -2;
+
+      end.onPlayerCollision = function()
+      {
+        end.shrink();
+        startLevel();
+      }
+
+      end.onProjectileCollision = function()
+      {
+        end.shrink();
+        startLevel();
+      }
+      
+    }
+
+    createMarker(canvasWidth, groundY);
+
     
 
     function startLevel() {
       // TODO 13 goes below here
 
+      var level = currentLevel[2];
+
+      var levelObjects = gameItems[2];
 
 
       //////////////////////////////////////////////
